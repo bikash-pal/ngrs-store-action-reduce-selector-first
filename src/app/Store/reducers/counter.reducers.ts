@@ -7,8 +7,9 @@ const _counterReducer=createReducer(initialState,
     on(increment,state=>{return{...state,counter:state.counter+1}}),
     on(decrement,state=>{return{...state,counter:state.counter-1}}),
     on(multiply,(state,{multiplyBy})=>{return{...state,counter:state.counter*multiplyBy}}),
-    on(multiply,state=>initialState),
+    on(reset,state=>initialState),
     );
 export function counterReducer(state:any,action:any){
+    console.log('state',state,'action:',action);
     return _counterReducer(state,action);
 }

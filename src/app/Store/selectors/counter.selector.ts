@@ -9,6 +9,7 @@ export interface AppState{
 export const selectFeature=(state:AppState)=>{return state.count}
 
 export const selectFeatureCount= createSelector(
+    
     selectFeature,
     (state:FeatureState)=>state.counter
 );
